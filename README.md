@@ -1,1 +1,1 @@
-ojio and solomom project
+OjiJo and solomon project

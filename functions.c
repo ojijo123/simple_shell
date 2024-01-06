@@ -8,7 +8,8 @@
   */
 void command(char *buffer)
 {
-	if (feof(stdin))
+	if (**buffer != NULL &&** feof(stdin))
+		feof
 	{
 		write(1, "\n", 1);
 		exit(0);
@@ -45,6 +46,7 @@ void execute_command(char *buffer, char **string, char **arg)
 			execve(buffer, string, NULL);
 	}
 	else
+		**free(buffer);
 		wait(0);
 }
  /**
@@ -57,7 +59,7 @@ char *tokenization(char *formats)
 {
 	int counter1 = 0;
 	char *format[100];
-	char *container1 = malloc(sizeof(char) * 1);
+	**char *container1 = malloc(sizeof(char) * 100);
 
 	if (container1 == NULL)
 		exit(0);
@@ -82,7 +84,7 @@ char *tokenization(char *formats)
   */
 void path_handler(char ***first_argument, char **arguments, char **argv_0)
 {
-	if (access((char *)first_argument, F_OK) == -1)
+	if (access((char **)first_argument, F_OK) == -1)
 	{
 		write(2, argv_0, strlen((char *)argv_0));
 		write(2, ": ", 2);

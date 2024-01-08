@@ -53,25 +53,43 @@ void execute_command(char *buffer, char **string, char **arg)
   *
   * Return: return index 0
   */
-char *tokenization(char *formats)
+void tokenization(char *formats, char **var)
 {
-	int counter1 = 0;
-	char *format[100];
+	int counter1 = 0, i;
+	char *format[20];
 	char *container1 = malloc(sizeof(char) * 1);
 
 	if (container1 == NULL)
-		exit(0);
+		exit(1);
 	container1 = strtok(formats, " ");
 	while (container1 != NULL)
 	{
+		format[counter1] = malloc(sizeof(char) * (strlen(container1) + 1));
+		if (format[counter1] == NULL)
+			exit(1);
 		strcat(format[counter1], container1);
 		container1 = strtok(NULL, " ");
 		counter1++;
 	}
-	format[counter1] = NULL;
+	exit_built_in(format[0]);
+	env_built_in(format[0], var);
+	for (i = 0; i < counter1; i++)
+		free(format[i]);
 	free(container1);
-	return (format[0]);
 }
+
+/**
+ * exit_built_in - function that confirms for exit user input
+ * @first: parameter containing user input
+ *
+ * Return: return void
+ */
+void exit_built_in(char *first)
+{
+        if (strcmp(first, "exit") == 0)
+                exit(0);
+}
+
  /**
   * path_handler - function that hanles path
   * @first_argument: command in array 0
@@ -91,16 +109,4 @@ void path_handler(char ***first_argument, char **arguments, char **argv_0)
 	}
 	else
 		execute_command((char *)first_argument, arguments, argv_0);
-}
-
-/**
- * exit_built_in - function that confirms for exit user input
- * @first: parameter containing user input
- *
- * Return: return void
- */
-void exit_built_in(char ***first)
-{
-	if (strcmp((char *)first, "exit") == 0)
-		exit(0);
 }

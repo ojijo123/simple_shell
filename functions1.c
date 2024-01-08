@@ -7,13 +7,13 @@
  *
  * Return: return void
  */
-void env_built_in(char ***first1, char ***var)
+void env_built_in(char *first1, char **var)
 {
-	if (strcmp((char *)first1, "env") == 0)
+	if (strcmp(first1, "env") == 0)
 	{
 		int j;
-
-	for (j = 0; var[j] != NULL; j++)
+		
+		for (j = 0; var[j] != NULL; j++)
 		{
 			write(2, var[j], strlen((char *)var[j]));
 			write(2, "\n", 1);

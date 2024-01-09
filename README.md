@@ -1,1 +1,0 @@
-OjiJo and solomon project

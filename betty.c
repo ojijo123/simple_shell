@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
-#include <stdlib.h>
 
 /**
  * main - main entry point of program
- * @ac: argument count
- * @av: argument vector
+ *
+ * Descpription: This is main function.
+ * The function is tasked with...
+ * The dispalying of a text...
+ * To the standard output.
  *
  * Return: return 0 always
  */

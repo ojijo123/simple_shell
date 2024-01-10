@@ -10,7 +10,7 @@
  *
  * Return: return (0) always
  */
-int main(int ac, char **argv[])
+int main(int ac, char **argv)
 {
 	int byte = 0;
 	char buffer_command[MAX_SIZE];

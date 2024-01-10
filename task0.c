@@ -1,13 +1,15 @@
-#include "shell.h"
-
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include <stdlib.h>
 /**
  * main - main entry point of program
  * @ac: argument count
- * @argv: argument vector
+ * @av: argument vector
  *
  * Return: return 0 always
  */
-int main(int ac, char **argv[])
+int main(int ac, char **av)
 {
 	int i = 1, j;
 	int sum = 0;
@@ -15,13 +17,13 @@ int main(int ac, char **argv[])
 
 	while (i < ac)
 	{
-		pointer = (char *)argv[i];
+		pointer = (char *)av[i];
 		j = atoi(pointer);
 		if (j < 0)
 			j *= -1;
 		sum += j;
 		i++;
 	}
-	printf("sum is %d\n", sum);
+	printf("sum is: %d\n", sum);
 	return (0);
 }

@@ -15,7 +15,7 @@
 
 extern char **environ;
 
-int main(int ac, char **argv[]);
+int main(int ac, char **av);
 void env_built_in(char *first1);
 void tokenization(char *formats, char **user_inputs, char **argument);
 void path_handler(char *first_argument, char **arguments, char **argv_0);

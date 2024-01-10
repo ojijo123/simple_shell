@@ -8,6 +8,10 @@
 #include <sys/wait.h>
 #include <stdbool.h>
 
+#define BUFSIZE 100
+#define TOK_DELIM " \t\r\n\a"
+#define prompt "solomon"
+
 extern char **environ;
 
 int main(int ac, char **argv[]);

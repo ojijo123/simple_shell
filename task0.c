@@ -13,11 +13,11 @@ int main(int ac, char **argv[])
 	int sum = 0;
 	char *pointer;
 
-	while (i <= (ac - 1))
+	while (i < ac)
 	{
 		pointer = (char *)argv[i];
 		j = atoi(pointer);
-		if (j > 0 || j < 0)
+		if (j < 0)
 			j *= -1;
 		sum += j;
 		i++;

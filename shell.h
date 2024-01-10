@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <sys/wait.h>
 #include <stdbool.h>
+#include <limits.h>
 
 #define BUFSIZE 100
 #define TOK_DELIM " \t\r\n\a"

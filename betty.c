@@ -2,6 +2,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
+
 /**
  * main - main entry point of program
  * @ac: argument count
@@ -9,21 +10,11 @@
  *
  * Return: return 0 always
  */
-int main(int ac, char **av)
+int main(void)
 {
-	int i = 1, j;
-	int sum = 0;
-	char *pointer;
+	char *pointer = "hello, this is a betty complying file";
 
-	while (i < ac)
-	{
-		pointer = (char *)av[i];
-		j = atoi(pointer);
-		if (j < 0)
-			j *= -1;
-		sum += j;
-		i++;
-	}
-	printf("sum is: %d\n", sum);
+	write(1, pointer, strlen(pointer));
+	write(1, "\n", 1);
 	return (0);
 }
